@@ -31,7 +31,8 @@ namespace AutonomerSForm
         {
             TryCatch(() =>
             {
-                var records = _sqlShell.GetArrayOf<Record>(Record.TableName);
+                const string orderBy = "ORDER BY " + nameof(Record.Date) + " DESC";
+                var records = _sqlShell.GetArrayOf<Record>(Record.TableName, orderBy: orderBy);
                 AddRecordsControls(records);
             }, "Не удалось получить или добавить записи в таблице в БД", true);
         }
@@ -42,6 +43,7 @@ namespace AutonomerSForm
             {
                 ExecuteScript();
             }, $"Ошибка во время выполнения скрипта", true);
+            TryUpdateTable();
         }
 
         private void ExecuteScript()
