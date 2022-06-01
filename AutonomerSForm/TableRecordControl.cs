@@ -1,0 +1,51 @@
+﻿using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+
+namespace AutonomerSForm
+{
+    public partial class TableRecordControl : UserControl
+    {
+        private Record _record = null;
+        public Record Record
+        {
+            get
+            {
+                return _record;
+            }
+            private set
+            {
+                SetRecordInfo(value);
+            }
+        }
+
+        public TableRecordControl()
+        {
+            InitializeComponent();
+        }
+
+        public TableRecordControl(Record record) : this()
+        {
+            SetRecordInfo(record);
+        }
+
+        private void SetRecordInfo(Record record)
+        {
+            _record = record;
+
+            textBoxUid.Text = _record.Uid.ToString();
+            textBoxCameraName.Text = _record.CameraName;
+            textBoxDate.Text = _record.Date.ToString("F");
+            textBoxCarNumber.Text = _record.CarNumber;
+
+            // TODO: Придумать как брать картинку. Пока вылетает ошибка
+
+            //pictureBoxImage.Image = (Bitmap)((new ImageConverter()).ConvertFrom(_record.Image));
+
+            //using (var ms = new MemoryStream(_record.Image))
+            //{
+            //    pictureBoxImage.Image = Image.FromStream(ms);
+            //}
+        }
+    }
+}
