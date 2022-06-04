@@ -71,10 +71,7 @@ namespace AutonomerSForm
                 for (int i = 0; i < sortedRecords.Length; i++)
                 {
                     var newRecordControl = new TableRecordControl(sortedRecords[i]);
-                    if (i == 0)
-                        newRecordControl.Location = new Point(0, (i * height));
-                    else
-                        newRecordControl.Location = new Point(0, (i * height) + 1);
+                    newRecordControl.Location = new Point(0, (i * height));
                     newRecordControl.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
 
                     _recordControls.Insert(0, newRecordControl);

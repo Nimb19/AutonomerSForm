@@ -91,7 +91,7 @@
             this.panelTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTable.Location = new System.Drawing.Point(12, 55);
             this.panelTable.Name = "panelTable";
-            this.panelTable.Size = new System.Drawing.Size(925, 619);
+            this.panelTable.Size = new System.Drawing.Size(925, 556);
             this.panelTable.TabIndex = 4;
             // 
             // label1

@@ -38,14 +38,10 @@ namespace AutonomerSForm
             textBoxDate.Text = _record.Date.ToString("F");
             textBoxCarNumber.Text = _record.CarNumber;
 
-            // TODO: Придумать как брать картинку. Пока вылетает ошибка
-
-            //pictureBoxImage.Image = (Bitmap)((new ImageConverter()).ConvertFrom(_record.Image));
-
-            //using (var ms = new MemoryStream(_record.Image))
-            //{
-            //    pictureBoxImage.Image = Image.FromStream(ms);
-            //}
+            using (var ms = new MemoryStream(_record.Image))
+            {
+                pictureBoxImage.Image = Image.FromStream(ms);
+            }
         }
     }
 }

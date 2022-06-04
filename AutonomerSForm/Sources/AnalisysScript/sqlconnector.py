@@ -61,15 +61,14 @@ date = datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 carnumber = 'A228AA128'
 
 imagefile = open('dali.jpg', 'rb')
-imagebytes = str(bytearray(imagefile.read())).replace("'", "''")
-# imagebytes = str(imagefile.read()).replace("'", "''")
+imagebytes = pyodbc.Binary(imagefile.read())
 imagefile.close()
 
 with sqlconn.cursor() as cursor:
     insertcmd = f"""INSERT INTO {tablename} (Uid, CameraName, Date, CarNumber, Image)
-                    SELECT N'{uid}', N'{cameraname}', '{date}', N'{carnumber}', CAST('{imagebytes}' as VARBINARY(MAX))"""
+                    SELECT N'{uid}', N'{cameraname}', '{date}', N'{carnumber}', (?)"""
     #print(insertcmd)
-    cursor.execute(insertcmd)
+    cursor.execute(insertcmd, imagebytes)
 print('Insert completed!')
 
 
