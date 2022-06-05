@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AutonomerSForm
@@ -18,8 +19,12 @@ namespace AutonomerSForm
 
         public TableForm(SqlServerSettings sqlServerSettings) : this()
         {
-            _sqlShell = new SqlServerShell(sqlServerSettings, Constants.ModuleInfo, Constants.DbName);
-            if (!_sqlShell.IsDbExist(Constants.DbName))
+            _sqlShell = new SqlServerShell(sqlServerSettings, Constants.ModuleInfo, null);
+            if (_sqlShell.IsDbExist(Constants.DbName))
+            {
+                _sqlShell.DbName = Constants.DbName;
+            }
+            else
             {
                 var genScript = Extensions.ReadFile(Constants.PathToGenerateDbScript);
                 _sqlShell.CreateDb(genScript, Constants.DbName);
@@ -85,6 +90,10 @@ namespace AutonomerSForm
                 }
 
                 labelRecordsCount.Text = _recordControls.Count.ToString();
+                labelEstimatedCarsCount.Text = sortedRecords.GroupBy(x => x.CarNumber)
+                    .Where(x => x.Count() % 2 == 1)
+                    .Count()
+                    .ToString();
             }, "Ошибка во время обновления таблицы", true);
         }
 

@@ -34,7 +34,6 @@ namespace AutonomerSForm
             _record = record;
 
             textBoxUid.Text = _record.Uid.ToString();
-            textBoxCameraName.Text = _record.CameraName;
             textBoxDate.Text = _record.Date.ToString("F");
             textBoxCarNumber.Text = _record.CarNumber;
 

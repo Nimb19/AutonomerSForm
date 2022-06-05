@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelRecordsCount = new System.Windows.Forms.Label();
+            this.labelEstimatedCarsCount = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,15 +91,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTable.AutoScroll = true;
             this.panelTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTable.Location = new System.Drawing.Point(12, 55);
+            this.panelTable.Location = new System.Drawing.Point(12, 58);
             this.panelTable.Name = "panelTable";
-            this.panelTable.Size = new System.Drawing.Size(925, 556);
+            this.panelTable.Size = new System.Drawing.Size(925, 608);
             this.panelTable.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(12, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 20);
             this.label1.TabIndex = 5;
@@ -107,21 +109,41 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(714, 32);
+            this.label2.Location = new System.Drawing.Point(12, 677);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 20);
+            this.label2.Size = new System.Drawing.Size(154, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Количество записей:";
+            this.label2.Text = "Всего распознано:";
             // 
             // labelRecordsCount
             // 
             this.labelRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRecordsCount.Location = new System.Drawing.Point(886, 32);
+            this.labelRecordsCount.Location = new System.Drawing.Point(197, 677);
             this.labelRecordsCount.Name = "labelRecordsCount";
             this.labelRecordsCount.Size = new System.Drawing.Size(51, 20);
             this.labelRecordsCount.TabIndex = 7;
             this.labelRecordsCount.Text = "0";
             this.labelRecordsCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelEstimatedCarsCount
+            // 
+            this.labelEstimatedCarsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelEstimatedCarsCount.Location = new System.Drawing.Point(323, 705);
+            this.labelEstimatedCarsCount.Name = "labelEstimatedCarsCount";
+            this.labelEstimatedCarsCount.Size = new System.Drawing.Size(51, 20);
+            this.labelEstimatedCarsCount.TabIndex = 9;
+            this.labelEstimatedCarsCount.Text = "0";
+            this.labelEstimatedCarsCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 705);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(305, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Предположительно машин на стоянке:";
             // 
             // TableForm
             // 
@@ -129,6 +151,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(949, 734);
+            this.Controls.Add(this.labelEstimatedCarsCount);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.labelRecordsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -158,6 +182,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelRecordsCount;
+        private System.Windows.Forms.Label labelEstimatedCarsCount;
+        private System.Windows.Forms.Label label4;
     }
 }
 

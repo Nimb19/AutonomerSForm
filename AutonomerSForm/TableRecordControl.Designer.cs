@@ -36,8 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxCameraName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Location = new System.Drawing.Point(5, 149);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 17);
@@ -69,7 +67,7 @@
             this.textBoxUid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUid.Location = new System.Drawing.Point(4, 24);
+            this.textBoxUid.Location = new System.Drawing.Point(5, 169);
             this.textBoxUid.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUid.Name = "textBoxUid";
             this.textBoxUid.ReadOnly = true;
@@ -85,8 +83,6 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBoxDate);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBoxCameraName);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBoxUid);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(314, 0);
@@ -99,7 +95,7 @@
             this.textBoxCarNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCarNumber.Location = new System.Drawing.Point(2, 169);
+            this.textBoxCarNumber.Location = new System.Drawing.Point(2, 69);
             this.textBoxCarNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCarNumber.Name = "textBoxCarNumber";
             this.textBoxCarNumber.ReadOnly = true;
@@ -109,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 151);
+            this.label4.Location = new System.Drawing.Point(2, 51);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 17);
@@ -121,7 +117,7 @@
             this.textBoxDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDate.Location = new System.Drawing.Point(4, 121);
+            this.textBoxDate.Location = new System.Drawing.Point(2, 24);
             this.textBoxDate.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDate.Name = "textBoxDate";
             this.textBoxDate.ReadOnly = true;
@@ -131,34 +127,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 101);
+            this.label3.Location = new System.Drawing.Point(2, 4);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Дата видеозаписи:";
-            // 
-            // textBoxCameraName
-            // 
-            this.textBoxCameraName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCameraName.Location = new System.Drawing.Point(4, 72);
-            this.textBoxCameraName.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCameraName.Name = "textBoxCameraName";
-            this.textBoxCameraName.ReadOnly = true;
-            this.textBoxCameraName.Size = new System.Drawing.Size(597, 23);
-            this.textBoxCameraName.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 52);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Название камеры:";
             // 
             // TableRecordControl
             // 
@@ -184,8 +158,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxUid;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxCameraName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxCarNumber;

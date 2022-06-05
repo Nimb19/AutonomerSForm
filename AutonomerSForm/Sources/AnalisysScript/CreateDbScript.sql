@@ -85,7 +85,6 @@ SET QUOTED_IDENTIFIER ON
 
 CREATE TABLE [dbo].[Records](
 	[Uid] [uniqueidentifier] NOT NULL,
-	[CameraName] [nvarchar](128) NOT NULL,
 	[Date] [datetime] NOT NULL,
 	[CarNumber] [nvarchar](128) NOT NULL,
 	[Image] [varbinary](max) NOT NULL,
