@@ -61,6 +61,15 @@ namespace AutonomerSForm
                 ThrowDBIfItDoesNotExist();
         }
 
+        public void CreateDb(string createSqlScript, string dbName)
+        {
+            var scripts = createSqlScript.Split(new[] { "GO" }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var genScript in scripts)
+                ExecuteNonQuery(genScript);
+
+            DbName = dbName;
+        }
+
         private void ThrowDBIfItDoesNotExist()
         {
             //var cmdtxt = $"SELECT * FROM {InitialCatalog}.dbo.sysdatabases WHERE name = '{DbName}'";

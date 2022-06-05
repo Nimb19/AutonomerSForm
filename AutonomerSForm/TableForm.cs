@@ -19,6 +19,12 @@ namespace AutonomerSForm
         public TableForm(SqlServerSettings sqlServerSettings) : this()
         {
             _sqlShell = new SqlServerShell(sqlServerSettings, Constants.ModuleInfo, Constants.DbName);
+            if (!_sqlShell.IsDbExist(Constants.DbName))
+            {
+                var genScript = Extensions.ReadFile(Constants.PathToGenerateDbScript);
+                _sqlShell.CreateDb(genScript, Constants.DbName);
+            }
+
             TryUpdateTable(); 
         }
 
