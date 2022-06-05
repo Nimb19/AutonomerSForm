@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -37,11 +38,9 @@ namespace AutonomerSForm
         ///     Стартовать процесс 
         /// </summary>
         /// <returns> ExitCode </returns>
-        public static int StartProcess(string args, string workingDirectory
+        public static int StartProcess(ILogger logger, string args, string workingDirectory
             , string fileName = "cmd.exe ", bool useAdminRights = false)
         {
-            //logger = logger == null ? (ILogger)NullLogger.Instance : (ILogger)new PrefixLogger(logger, $"[ConsoleStarter] ");
-
             var internalEncoding = /*encoding ??*/ Encoding.UTF8;
             var processStartInfo = new ProcessStartInfo()
             {
@@ -61,31 +60,27 @@ namespace AutonomerSForm
 
             var process = new Process() { StartInfo = processStartInfo };
 
-            //if (!logOnlyErrors)
-            //    process.OutputDataReceived += (s, e) => { if (!string.IsNullOrWhiteSpace(e.Data)) Console.WriteLine($"{OutputPrefix} {e.Data}"); };
-            //process.ErrorDataReceived += (s, e) => { if (!string.IsNullOrWhiteSpace(e.Data)) Console.WriteLine($"{OutputPrefix} [ERR] {e.Data}"); };
+            process.OutputDataReceived += (s, e) => { if (!string.IsNullOrWhiteSpace(e.Data)) logger.WriteLine($"{e.Data}"); };
+            process.ErrorDataReceived += (s, e) => { if (!string.IsNullOrWhiteSpace(e.Data)) logger.WriteLine($"[ERR] {e.Data}"); };
 
-            //if (!logOnlyErrors)
-            //    logger.WriteLine("Начало чтения консоли дочернего процесса: ");
+            logger.WriteLine("Начало чтения консоли дочернего процесса: ");
 
             process.Start();
 
-            //if (!logOnlyErrors)
-            //    process.BeginOutputReadLine();
-            //process.BeginErrorReadLine();
+            process.BeginOutputReadLine();
+            process.BeginErrorReadLine();
 
             process.WaitForExit();
             var exitCode = process.ExitCode;
             process.Close();
 
-            //if (exitCode != 0)
-            //{
-            //    logger.Error($"Процесс завершился с кодом {exitCode}.{Environment.NewLine}\tАргументы: {args}");
-            //    return exitCode;
-            //}
+            if (exitCode != 0)
+            {
+                logger.Error($"Процесс завершился с кодом {exitCode}.{Environment.NewLine}\tАргументы: {args}");
+                return exitCode;
+            }
 
-            //if (!logOnlyErrors)
-            //    logger.WriteLine($"Конец чтения консоли дочернего процесса. Код выхода: {exitCode}");
+            logger.WriteLine($"Конец чтения консоли дочернего процесса. Код выхода: {exitCode}");
 
             return exitCode;
         }

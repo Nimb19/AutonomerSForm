@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -50,25 +49,10 @@ namespace AutonomerSForm
 
         private void ExecuteScriptToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TryCatch(() =>
-            {
-                ExecuteScript();
-            }, $"Ошибка во время выполнения скрипта", true);
+            var runScroptForm = new RunPyScriptForm();
+            runScroptForm.ShowDialog();
+
             TryUpdateTable();
-        }
-
-        private void ExecuteScript()
-        {
-            var pyScriptFile = new FileInfo(Constants.PathToPythonScript);
-            if (!pyScriptFile.Exists)
-                throw new FileNotFoundException($"Не найден скрипт по пути: {pyScriptFile.FullName}");
-
-            var exitCode = Extensions.StartProcess(pyScriptFile.FullName, pyScriptFile.Directory.FullName, "python ");
-            var exitCodeString = $"Код завершения: {exitCode}";
-            if (exitCode == 0)
-                ShowInfoBox($"Скрипт '{pyScriptFile.Name}' успешно исполнен. {exitCodeString}");
-            else
-                ShowWarningBox($"Скрипт '{pyScriptFile.Name}' отдал не успешный код завершения. {exitCodeString}");
         }
 
         public void AddRecordsControls(Record[] sortedRecords)
@@ -129,11 +113,6 @@ namespace AutonomerSForm
                     ShowWarningBox(ex.ToString(), isError: isErr);
                 return false;
             }
-        }
-
-        protected bool StringEquals(string left, string right)
-        {
-            return string.Equals(left, right, StringComparison.OrdinalIgnoreCase);
         }
     }
 }
