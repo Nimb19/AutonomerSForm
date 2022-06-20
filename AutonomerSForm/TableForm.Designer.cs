@@ -40,7 +40,13 @@
             this.labelRecordsCount = new System.Windows.Forms.Label();
             this.labelEstimatedCarsCount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonFindByKeyWord = new System.Windows.Forms.Button();
+            this.textBoxKeyWord = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelKeyWordsCounter = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -91,15 +97,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTable.AutoScroll = true;
             this.panelTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTable.Location = new System.Drawing.Point(12, 58);
+            this.panelTable.Location = new System.Drawing.Point(12, 139);
             this.panelTable.Name = "panelTable";
-            this.panelTable.Size = new System.Drawing.Size(925, 608);
+            this.panelTable.Size = new System.Drawing.Size(925, 583);
             this.panelTable.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(8, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 20);
             this.label1.TabIndex = 5;
@@ -109,7 +115,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 677);
+            this.label2.Location = new System.Drawing.Point(8, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 20);
             this.label2.TabIndex = 6;
@@ -118,7 +124,7 @@
             // labelRecordsCount
             // 
             this.labelRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRecordsCount.Location = new System.Drawing.Point(197, 677);
+            this.labelRecordsCount.Location = new System.Drawing.Point(193, 44);
             this.labelRecordsCount.Name = "labelRecordsCount";
             this.labelRecordsCount.Size = new System.Drawing.Size(51, 20);
             this.labelRecordsCount.TabIndex = 7;
@@ -128,7 +134,7 @@
             // labelEstimatedCarsCount
             // 
             this.labelEstimatedCarsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelEstimatedCarsCount.Location = new System.Drawing.Point(323, 705);
+            this.labelEstimatedCarsCount.Location = new System.Drawing.Point(319, 72);
             this.labelEstimatedCarsCount.Name = "labelEstimatedCarsCount";
             this.labelEstimatedCarsCount.Size = new System.Drawing.Size(51, 20);
             this.labelEstimatedCarsCount.TabIndex = 9;
@@ -139,11 +145,67 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 705);
+            this.label4.Location = new System.Drawing.Point(8, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(305, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Предположительно машин на стоянке:";
+            // 
+            // buttonFindByKeyWord
+            // 
+            this.buttonFindByKeyWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFindByKeyWord.Location = new System.Drawing.Point(17, 60);
+            this.buttonFindByKeyWord.Name = "buttonFindByKeyWord";
+            this.buttonFindByKeyWord.Size = new System.Drawing.Size(307, 32);
+            this.buttonFindByKeyWord.TabIndex = 13;
+            this.buttonFindByKeyWord.Text = "Найти по ключевому слову";
+            this.buttonFindByKeyWord.UseVisualStyleBackColor = true;
+            this.buttonFindByKeyWord.Click += new System.EventHandler(this.ButtonFindByKeyWord_Click);
+            // 
+            // textBoxKeyWord
+            // 
+            this.textBoxKeyWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxKeyWord.Location = new System.Drawing.Point(17, 26);
+            this.textBoxKeyWord.Name = "textBoxKeyWord";
+            this.textBoxKeyWord.Size = new System.Drawing.Size(448, 26);
+            this.textBoxKeyWord.TabIndex = 12;
+            this.textBoxKeyWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(330, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Найдено:";
+            // 
+            // labelKeyWordsCounter
+            // 
+            this.labelKeyWordsCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelKeyWordsCounter.AutoSize = true;
+            this.labelKeyWordsCounter.Location = new System.Drawing.Point(448, 66);
+            this.labelKeyWordsCounter.Name = "labelKeyWordsCounter";
+            this.labelKeyWordsCounter.Size = new System.Drawing.Size(17, 20);
+            this.labelKeyWordsCounter.TabIndex = 15;
+            this.labelKeyWordsCounter.Text = "0";
+            this.labelKeyWordsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBoxKeyWord);
+            this.groupBox1.Controls.Add(this.labelKeyWordsCounter);
+            this.groupBox1.Controls.Add(this.buttonFindByKeyWord);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(455, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(482, 106);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Поиск записей";
             // 
             // TableForm
             // 
@@ -151,6 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(949, 734);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelEstimatedCarsCount);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelRecordsCount);
@@ -166,6 +229,8 @@
             this.Text = "Просмотр списка записей";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +249,11 @@
         private System.Windows.Forms.Label labelRecordsCount;
         private System.Windows.Forms.Label labelEstimatedCarsCount;
         private System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Button buttonFindByKeyWord;
+        private System.Windows.Forms.TextBox textBoxKeyWord;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelKeyWordsCounter;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

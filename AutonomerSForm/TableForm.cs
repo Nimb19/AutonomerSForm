@@ -10,6 +10,7 @@ namespace AutonomerSForm
     {
         private readonly SqlServerShell _sqlShell;
         private readonly List<TableRecordControl> _recordControls = new List<TableRecordControl>();
+        private bool _isFiltered;
 
         public TableForm()
         {
@@ -65,7 +66,7 @@ namespace AutonomerSForm
                 var height = new TableRecordControl().Size.Height;
                 for (int i = 0; i < sortedRecords.Length; i++)
                 {
-                    var newRecordControl = new TableRecordControl(sortedRecords[i]);
+                    var newRecordControl = new TableRecordControl(sortedRecords[i], _sqlShell);
                     newRecordControl.Location = new Point(0, (i * height));
                     newRecordControl.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
 
@@ -113,6 +114,49 @@ namespace AutonomerSForm
                     ShowWarningBox(ex.ToString(), isError: isErr);
                 return false;
             }
+        }
+
+        private void ButtonFindByKeyWord_Click(object sender, EventArgs e)
+        {
+            if (_recordControls.Count == 0)
+                return;
+            var keyWord = textBoxKeyWord.Text?.Trim()?.ToLower();
+            if (string.IsNullOrWhiteSpace(keyWord))
+                return;
+
+            _isFiltered = true;
+            var properties = typeof(Record).GetProperties();
+            var filteredControls = new List<Record>();
+
+            foreach (var record in _recordControls.Select(x => x.Record))
+            {
+                foreach (var prop in properties)
+                {
+                    var val = prop.GetValue(record);
+                    if (val == null)
+                        continue;
+                    else if (val is Guid)
+                        continue;
+                    var isContains = false;
+
+                    if ((val is string valS && valS.ToLower().Contains(keyWord)))
+                        isContains = true;
+                    else if (val is DateTimeOffset valD && valD.ToString("f").ToLower().Contains(keyWord))
+                        isContains = true;
+                    else if (val is DateTime valDt && valDt.ToString("f").ToLower().Contains(keyWord))
+                        isContains = true;
+                    else if (val.ToString().ToLower().Contains(keyWord))
+                        isContains = true;
+
+                    if (isContains)
+                    {
+                        filteredControls.Add(record);
+                        break;
+                    }
+                }
+            }
+
+            AddRecordsControls(filteredControls.OrderByDescending(x => x.Date).ToArray());
         }
     }
 }

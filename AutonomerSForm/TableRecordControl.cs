@@ -6,6 +6,7 @@ namespace AutonomerSForm
 {
     public partial class TableRecordControl : UserControl
     {
+        private SqlServerShell _sqlServerShell;
         private Record _record = null;
         public Record Record
         {
@@ -19,14 +20,16 @@ namespace AutonomerSForm
             }
         }
 
+
         public TableRecordControl()
         {
             InitializeComponent();
         }
 
-        public TableRecordControl(Record record) : this()
+        public TableRecordControl(Record record, SqlServerShell sqlServerShell) : this()
         {
             SetRecordInfo(record);
+            _sqlServerShell = sqlServerShell;
         }
 
         private void SetRecordInfo(Record record)
@@ -41,6 +44,37 @@ namespace AutonomerSForm
             {
                 pictureBoxImage.Image = Image.FromStream(ms);
             }
+        }
+
+        private void ButtonChange_Click(object sender, System.EventArgs e)
+        {
+            textBoxCarNumber.ReadOnly = false;
+            buttonSave.Visible = true;
+            buttonChange.Visible = false;
+        }
+
+        private void ButtonSave_Click(object sender, System.EventArgs e)
+        {
+            var carNumberText = textBoxCarNumber.Text.Trim();
+            if (string.IsNullOrEmpty(carNumberText))
+            {
+                ShowWarningBox("Пустое поле для логина.");
+                return;
+            }
+
+            buttonChange.Visible = true;
+            buttonSave.Visible = false;
+            textBoxCarNumber.ReadOnly = true;
+
+            _sqlServerShell.UpdateCell(nameof(Record.CarNumber), carNumberText
+                    , $"WHERE {nameof(Record.Uid)} = '{Record.Uid}'", Record.TableName);
+        }
+
+        protected void ShowWarningBox(string text, string header = "Ошибка во время проверки значений"
+            , bool isError = false)
+        {
+            MessageBox.Show(text, header, MessageBoxButtons.OK
+                , isError ? MessageBoxIcon.Error : MessageBoxIcon.Warning);
         }
     }
 }

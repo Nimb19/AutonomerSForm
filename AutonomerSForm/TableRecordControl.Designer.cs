@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxUid = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonChange = new System.Windows.Forms.Button();
             this.textBoxCarNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxDate = new System.Windows.Forms.TextBox();
@@ -79,6 +81,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.buttonSave);
+            this.panel1.Controls.Add(this.buttonChange);
             this.panel1.Controls.Add(this.textBoxCarNumber);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBoxDate);
@@ -89,6 +93,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(605, 196);
             this.panel1.TabIndex = 3;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(305, 99);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(294, 29);
+            this.buttonSave.TabIndex = 10;
+            this.buttonSave.Text = "Сохранить номер";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Visible = false;
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // buttonChange
+            // 
+            this.buttonChange.Location = new System.Drawing.Point(2, 99);
+            this.buttonChange.Name = "buttonChange";
+            this.buttonChange.Size = new System.Drawing.Size(297, 29);
+            this.buttonChange.TabIndex = 9;
+            this.buttonChange.Text = "Изменить номер";
+            this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
             // textBoxCarNumber
             // 
@@ -162,5 +187,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxCarNumber;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonChange;
     }
 }

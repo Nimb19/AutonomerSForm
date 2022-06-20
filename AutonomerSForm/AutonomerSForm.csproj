@@ -109,18 +109,150 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="Sources\AnalisysScript\dali.jpg" />
-    <Content Include="Sources\AnalisysScript\sqlconnector.py" />
-    <Content Include="Sources\Config.json" />
+    <None Include="Sources\Config.json" />
+    <None Include="Sources\Core\AutonomersPythonProject\.DS_Store" />
+    <None Include="Sources\Core\AutonomersPythonProject\AUTO_DIR\.DS_Store" />
+    <None Include="Sources\Core\AutonomersPythonProject\IMAGES_DIR\.DS_Store" />
+    <None Include="Sources\Core\AutonomersPythonProject\mobilenet-v1-ssd-mp-0_675.pth" />
+    <None Include="Sources\Core\AutonomersPythonProject\MODEL_DIR\mobilenet-v1-ssd-mp-0_675.pth" />
+    <None Include="Sources\Core\AutonomersPythonProject\readme.md" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\.DS_Store" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\datasets\__pycache__\open_images.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\datasets\__pycache__\open_images.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\datasets\__pycache__\voc_dataset.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\datasets\__pycache__\voc_dataset.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\datasets\__pycache__\__init__.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\datasets\__pycache__\__init__.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\mobilenet.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\mobilenet.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\mobilenetv3.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\mobilenetv3.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\mobilenet_v2.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\mobilenet_v2.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\squeezenet.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\squeezenet.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\vgg.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\vgg.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\__init__.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\nn\__pycache__\__init__.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__pycache__\mobilenetv1_ssd_config.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__pycache__\mobilenetv1_ssd_config.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__pycache__\squeezenet_ssd_config.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__pycache__\squeezenet_ssd_config.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__pycache__\vgg_ssd_config.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__pycache__\vgg_ssd_config.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__pycache__\__init__.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__pycache__\__init__.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\data_preprocessing.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\data_preprocessing.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\mobilenetv1_ssd.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\mobilenetv1_ssd.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\mobilenetv1_ssd_lite.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\mobilenetv1_ssd_lite.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\mobilenetv3_ssd_lite.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\mobilenetv3_ssd_lite.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\mobilenet_v2_ssd_lite.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\mobilenet_v2_ssd_lite.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\predictor.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\predictor.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\squeezenet_ssd_lite.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\squeezenet_ssd_lite.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\ssd.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\ssd.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\vgg_ssd.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\vgg_ssd.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\__init__.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\ssd\__pycache__\__init__.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\transforms\__pycache__\transforms.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\transforms\__pycache__\transforms.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\transforms\__pycache__\__init__.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\transforms\__pycache__\__init__.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\utils\__pycache__\box_utils.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\utils\__pycache__\box_utils.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\utils\__pycache__\measurements.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\utils\__pycache__\measurements.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\utils\__pycache__\misc.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\utils\__pycache__\misc.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\utils\__pycache__\__init__.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\utils\__pycache__\__init__.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\__pycache__\__init__.cpython-310.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\vision\__pycache__\__init__.cpython-39.pyc" />
+    <None Include="Sources\Core\AutonomersPythonProject\__pycache__\utils.cpython-310.pyc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="aicon.ico" />
-    <Content Include="Sources\AnalisysScript\CreateDbScript.sql" />
+    <Content Include="Sources\Core\AutonomersPythonProject\IMAGES_DIR\0.jpg" />
+    <Content Include="Sources\Core\AutonomersPythonProject\IMAGES_DIR\1.jpg" />
+    <Content Include="Sources\Core\AutonomersPythonProject\IMAGES_DIR\2.jpg" />
+    <Content Include="Sources\Core\AutonomersPythonProject\IMAGES_DIR\3.jpg" />
+    <Content Include="Sources\Core\AutonomersPythonProject\mpg2jpg-iss.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\out.txt" />
+    <Content Include="Sources\Core\AutonomersPythonProject\pytestnumber.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\sqlconnector.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\testTresh.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\timg.png" />
+    <Content Include="Sources\Core\AutonomersPythonProject\utils.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v0-baseline.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v1-baseline.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v2-haar-cascades.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v3-openalpr.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v4-detect.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v5-detect.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v6-detect_labeling.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v6-iss-mobilenet_v3_large-predict.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\datasets\collation.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\datasets\generate_vocdata.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\datasets\open_images.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\datasets\voc_dataset.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\datasets\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\alexnet.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\mobilenet.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\mobilenetv3.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\mobilenet_v2.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\multibox_loss.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\scaled_l2_norm.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\squeezenet.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\vgg.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\nn\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\prunning\prunner.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\prunning\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\mobilenetv1_ssd_config.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\squeezenet_ssd_config.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\vgg_ssd_config.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\config\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\data_preprocessing.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\fpn_mobilenetv1_ssd.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\fpn_ssd.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\mobilenetv1_ssd.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\mobilenetv1_ssd_lite.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\mobilenetv3_ssd_lite.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\mobilenet_v2_ssd_lite.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\predictor.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\squeezenet_ssd_lite.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\ssd.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\vgg_ssd.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\ssd\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\test\assets\000138.jpg" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\test\test_vgg_ssd.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\test\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\transforms\transforms.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\transforms\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\utils\box_utils.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\utils\box_utils_numpy.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\utils\measurements.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\utils\misc.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\utils\model_book.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\utils\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\vision\__init__.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\voc-model-labels.txt" />
+    <Content Include="Sources\Core\CreateDbScript.sql" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sources\Core\AutonomersPythonProject\DATA_DIR\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
@@ -130,9 +262,9 @@
   <Target Name="CopySourceFiles" AfterTargets="AfterBuild">
     <ItemGroup>
       <DataFiles Include="$(ProjectDir)\Sources\*" />
-      <ScriptFiles Include="$(ProjectDir)\Sources\AnalisysScript\*" />
+      <CoreFiles Include="$(ProjectDir)\Sources\Core\**" />
     </ItemGroup>
     <Copy SourceFiles="@(DataFiles)" DestinationFolder="$(OutDir)" />
-    <Copy SourceFiles="@(ScriptFiles)" DestinationFolder="$(OutDir)\AnalisysScript" />
+    <Copy SourceFiles="@(CoreFiles)" DestinationFolder="$(OutDir)\Core\%(RecursiveDir)" />
   </Target>
 </Project>
