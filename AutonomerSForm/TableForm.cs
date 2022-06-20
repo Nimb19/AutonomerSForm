@@ -44,6 +44,7 @@ namespace AutonomerSForm
             {
                 const string orderBy = "ORDER BY " + nameof(Record.Date) + " DESC";
                 var records = _sqlShell.GetArrayOf<Record>(Record.TableName, orderBy: orderBy);
+                _isFiltered = false;
                 AddRecordsControls(records);
             }, "Не удалось получить или добавить записи в таблице в БД", true);
         }
@@ -70,15 +71,24 @@ namespace AutonomerSForm
                     newRecordControl.Location = new Point(0, (i * height));
                     newRecordControl.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
 
+                    newRecordControl.RecordChanged += (s, r) => { if (!_isFiltered) TryUpdateTable(); };
+
                     _recordControls.Insert(0, newRecordControl);
                     panelTable.Controls.Add(newRecordControl);
                 }
 
-                labelRecordsCount.Text = _recordControls.Count.ToString();
-                labelEstimatedCarsCount.Text = sortedRecords.GroupBy(x => x.CarNumber)
-                    .Where(x => x.Count() % 2 == 1)
-                    .Count()
-                    .ToString();
+                if (!_isFiltered)
+                {
+                    labelRecordsCount.Text = _recordControls.Count.ToString();
+                    labelEstimatedCarsCount.Text = sortedRecords.GroupBy(x => x.CarNumber)
+                        .Where(x => x.Count() % 2 == 1)
+                        .Count()
+                        .ToString();
+                }
+                else
+                {
+                    labelKeyWordsCounter.Text = sortedRecords.Length.ToString();
+                }
             }, "Ошибка во время обновления таблицы", true);
         }
 

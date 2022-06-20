@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -6,6 +7,8 @@ namespace AutonomerSForm
 {
     public partial class TableRecordControl : UserControl
     {
+        public event EventHandler<Record> RecordChanged;
+
         private SqlServerShell _sqlServerShell;
         private Record _record = null;
         public Record Record
@@ -68,6 +71,8 @@ namespace AutonomerSForm
 
             _sqlServerShell.UpdateCell(nameof(Record.CarNumber), carNumberText
                     , $"WHERE {nameof(Record.Uid)} = '{Record.Uid}'", Record.TableName);
+
+            RecordChanged?.Invoke(this, Record);
         }
 
         protected void ShowWarningBox(string text, string header = "Ошибка во время проверки значений"

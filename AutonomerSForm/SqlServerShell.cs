@@ -29,7 +29,7 @@ namespace AutonomerSForm
     {
         private readonly string _moduleInfo = "SqlServerShell";
 
-        private object _lock = new object();
+        private object _executeLock = new object();
 
         public const int ConnectionTimeoutInSeconds = 3;
 
@@ -205,7 +205,7 @@ namespace AutonomerSForm
 
         public void UpdateCell(string columnName, string cellValue, string where, string tableName)
         {
-            var cmdTxt = $"UPDATE [{DbName}].dbo.{tableName} SET {columnName} = {cellValue} {where}";
+            var cmdTxt = $"UPDATE [{DbName}].dbo.{tableName} SET {columnName} = '{cellValue}' {where}";
 
             if (ExecuteNonQuery(cmdTxt) == 0)
                 throw new Affected0RowsException();
@@ -360,7 +360,7 @@ namespace AutonomerSForm
         public T[] ReadArrayOf<T>(string getCmd) where T : class, new()
         {
             var list = new List<T>();
-            lock (_lock)
+            lock (_executeLock)
             {
                 using (var reader = ExecuteReader(getCmd))
                 {
@@ -403,7 +403,7 @@ namespace AutonomerSForm
         public string[] ReadArrayOfStrings(string cmdText)
         {
             var list = new List<string>();
-            lock (_lock)
+            lock (_executeLock)
             {
                 using (var reader = ExecuteReader(cmdText))
                 {
@@ -742,7 +742,7 @@ namespace AutonomerSForm
         private List<string> GetList(string script)
         {
             var list = new List<string>();
-            lock (_lock)
+            lock (_executeLock)
             {
                 using (var reader = ExecuteReader(script))
                 {
@@ -759,7 +759,7 @@ namespace AutonomerSForm
         private List<T> GetList<T>(string script)
         {
             var list = new List<T>();
-            lock (_lock)
+            lock (_executeLock)
             {
                 using (var reader = ExecuteReader(script))
                 {
@@ -781,15 +781,9 @@ namespace AutonomerSForm
         {
             SqlCommand cmd;
 
-            var isEnter = Monitor.TryEnter(_lock);
-            try
+            lock (_executeLock)
             {
                 cmd = SqlCon.CreateCommand();
-            }
-            finally
-            {
-                if (isEnter)
-                    Monitor.Exit(_lock);
             }
 
             cmd.CommandTimeout = CommandTimeoutInSeconds;
@@ -801,26 +795,20 @@ namespace AutonomerSForm
 
         public SqlDataReader ExecuteReader(string command, CommandType commandType = CommandType.Text)
         {
-            using (var cmd = CreateCommand(command, commandType))
+            lock (_executeLock)
             {
-                var isEnter = Monitor.TryEnter(_lock);
-                try
+                using (var cmd = CreateCommand(command, commandType))
                 {
                     return cmd.ExecuteReader();
-                }
-                finally
-                {
-                    if (isEnter)
-                        Monitor.Exit(_lock);
                 }
             }
         }
 
         public object ExecuteScalar(string command, CommandType commandType = CommandType.Text)
         {
-            using (var cmd = CreateCommand(command, commandType))
+            lock (_executeLock)
             {
-                lock (_lock)
+                using (var cmd = CreateCommand(command, commandType))
                 {
                     return cmd.ExecuteScalar();
                 }
@@ -829,9 +817,9 @@ namespace AutonomerSForm
 
         public int ExecuteNonQuery(string command, CommandType commandType = CommandType.Text)
         {
-            using (var cmd = CreateCommand(command, commandType))
+            lock (_executeLock)
             {
-                lock (_lock)
+                using (var cmd = CreateCommand(command, commandType))
                 {
                     return cmd.ExecuteNonQuery();
                 }

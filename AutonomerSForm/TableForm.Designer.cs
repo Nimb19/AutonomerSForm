@@ -113,7 +113,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 44);
             this.label2.Name = "label2";
@@ -123,8 +122,7 @@
             // 
             // labelRecordsCount
             // 
-            this.labelRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRecordsCount.Location = new System.Drawing.Point(193, 44);
+            this.labelRecordsCount.Location = new System.Drawing.Point(319, 44);
             this.labelRecordsCount.Name = "labelRecordsCount";
             this.labelRecordsCount.Size = new System.Drawing.Size(51, 20);
             this.labelRecordsCount.TabIndex = 7;
@@ -133,7 +131,6 @@
             // 
             // labelEstimatedCarsCount
             // 
-            this.labelEstimatedCarsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEstimatedCarsCount.Location = new System.Drawing.Point(319, 72);
             this.labelEstimatedCarsCount.Name = "labelEstimatedCarsCount";
             this.labelEstimatedCarsCount.Size = new System.Drawing.Size(51, 20);
@@ -143,7 +140,6 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 72);
             this.label4.Name = "label4";
@@ -171,7 +167,6 @@
             this.textBoxKeyWord.Name = "textBoxKeyWord";
             this.textBoxKeyWord.Size = new System.Drawing.Size(448, 26);
             this.textBoxKeyWord.TabIndex = 12;
-            this.textBoxKeyWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -196,6 +191,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.textBoxKeyWord);
             this.groupBox1.Controls.Add(this.labelKeyWordsCounter);
             this.groupBox1.Controls.Add(this.buttonFindByKeyWord);

@@ -193,6 +193,8 @@
     <Content Include="Sources\Core\AutonomersPythonProject\pytestnumber.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\sqlconnector.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\testTresh.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\test\dali.jpg" />
+    <Content Include="Sources\Core\AutonomersPythonProject\test\sqlconnector.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\timg.png" />
     <Content Include="Sources\Core\AutonomersPythonProject\utils.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\v0-baseline.py" />
