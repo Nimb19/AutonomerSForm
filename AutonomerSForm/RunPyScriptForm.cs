@@ -39,7 +39,7 @@ namespace AutonomerSForm
             var textBoxLogger = new TextBoxLogger(textBoxLog, SynchronizationContext.Current);
             textBoxLog.Clear();
 
-            var args = $"{pyScriptFile.FullName} /Video:{video.FullName}";
+            var args = $"{pyScriptFile.FullName} /video:{video.FullName}";
             var exitCode = Extensions.StartProcess(textBoxLogger, args, pyScriptFile.Directory.FullName, "python ");
             
             var exitCodeString = $"Код завершения: {exitCode}";
