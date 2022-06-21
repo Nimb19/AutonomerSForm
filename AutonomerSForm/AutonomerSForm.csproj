@@ -184,6 +184,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aicon.ico" />
+    <Content Include="Sources\Core\AutonomersPythonProject\detection-examples\1.png" />
+    <Content Include="Sources\Core\AutonomersPythonProject\detection-examples\2.png" />
+    <Content Include="Sources\Core\AutonomersPythonProject\detection-examples\3.png" />
+    <Content Include="Sources\Core\AutonomersPythonProject\detection-examples\4.png" />
+    <Content Include="Sources\Core\AutonomersPythonProject\detection-examples\5.png" />
+    <Content Include="Sources\Core\AutonomersPythonProject\detection-examples\6.png" />
+    <Content Include="Sources\Core\AutonomersPythonProject\detection-examples\Data.txt" />
     <Content Include="Sources\Core\AutonomersPythonProject\IMAGES_DIR\0.jpg" />
     <Content Include="Sources\Core\AutonomersPythonProject\IMAGES_DIR\1.jpg" />
     <Content Include="Sources\Core\AutonomersPythonProject\IMAGES_DIR\2.jpg" />
@@ -205,6 +212,7 @@
     <Content Include="Sources\Core\AutonomersPythonProject\v5-detect.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\v6-detect_labeling.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\v6-iss-mobilenet_v3_large-predict.py" />
+    <Content Include="Sources\Core\AutonomersPythonProject\v7-detect_machine.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\vision\datasets\collation.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\vision\datasets\generate_vocdata.py" />
     <Content Include="Sources\Core\AutonomersPythonProject\vision\datasets\open_images.py" />

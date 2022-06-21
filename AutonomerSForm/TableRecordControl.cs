@@ -40,7 +40,7 @@ namespace AutonomerSForm
             _record = record;
 
             textBoxUid.Text = _record.Uid.ToString();
-            textBoxDate.Text = _record.Date.ToString("F");
+            textBoxDate.Text = _record.Date.ToString("T");
             textBoxCarNumber.Text = _record.CarNumber;
 
             using (var ms = new MemoryStream(_record.Image))

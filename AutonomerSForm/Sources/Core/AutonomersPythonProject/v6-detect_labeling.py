@@ -1,5 +1,6 @@
 # https://github.com/qfgaohao/pytorch-ssd
 import base64
+from fileinput import filename
 import requests
 import json
 import datetime
@@ -139,7 +140,8 @@ for t in tqdm(range(0, mpg_duration)):
     width, height = 1222, 1080
     x, y = 320, 0
     out_filename = "%d.jpg" % t
-    out_file = str(pathlib.Path(IMAGES_DIR, out_filename))
+    out_file = pathlib.Path(IMAGES_DIR, out_filename)
+    print(out_file)
     stream = ffmpeg.input(mpg_path, ss=t)
     #[y:y+height, x:x+width]
     stream = ffmpeg.filter(stream, 'scale', 4000, -1) # уменьшение размера (при необходимости)
@@ -147,6 +149,15 @@ for t in tqdm(range(0, mpg_duration)):
     if i == 5:
         break
     ffmpeg.run(stream)
+    
+    im = Image.open(out_file)
+    draw = ImageDraw.Draw(im)
+
+    draw.rectangle((2900, 0, 3700, 600), fill='black')
+    draw.rectangle((3300, 0, 4100, 1200), fill='black')
+    draw.rectangle((0, 0, 700, 500), fill='black')
+    draw.rectangle((0, 0, 300, 2300), fill='black')
+    im.save(out_file, quality=95)
 
 # ---------------------------------- Поиск изображений с автомобилями (v5-detect.py)
 

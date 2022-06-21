@@ -86,6 +86,9 @@
             // 
             // textBoxLog
             // 
+            this.textBoxLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLog.Font = new System.Drawing.Font("Century Gothic", 8.75F);
             this.textBoxLog.Location = new System.Drawing.Point(12, 181);
             this.textBoxLog.Multiline = true;
